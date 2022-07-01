@@ -1,0 +1,1 @@
+[Static url](https://cdn.statically.io/gh/kmcgreg5/YachtTemplates/main/kmcgreg.templates.json)
