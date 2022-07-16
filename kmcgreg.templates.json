@@ -36,5 +36,116 @@
         "default": "!PGID"
       }
     ]
+  },
+  {
+    "type": 1,
+    "title": "qBittorrentVPN",
+    "name": "qbittorrentvpn",
+    "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
+    "logo": "https://appslist.heimdall.site/icons/qbittorrent.svg",
+    "image": "binhex/arch-qbittorrentvpn:latest",
+    "categories": ["Service", "Tools"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "8080:8080/tcp",
+        "Privoxy": "8081:8081/tcp",
+        "Port3": "6881:6881/tcp",
+        "Port4": "6881:6881/udp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/qBittorrentVPN"
+      },
+      {
+        "container": "/data",
+        "bind": "!downloads"
+      },
+      {
+        "container": "/etc/localtime",
+        "bind": "!localtime"
+      }
+    ],
+    "cap_add": ["NET_ADMIN"],
+    "env": [
+      {
+        "name": "VPN_ENABLED",
+        "label": "VPN_ENABLED",
+        "default": "yes"
+      },
+      {
+        "name": "VPN_USER",
+        "label": "VPN_USER",
+        "default": "myusername"
+      },
+      {
+        "name": "VPN_PASS",
+        "label": "VPN_PASS",
+        "default": "mypassword"
+      },
+      {
+        "name": "VPN_PROV",
+        "label": "VPN_PROV",
+        "default": "pia|airvpn|custom"
+      },
+      {
+        "name": "VPN_CLIENT",
+        "label": "VPN_CLIENT",
+        "default": "openvpn"
+      },
+      {
+        "name": "STRICT_PORT_FORWARD",
+        "label": "STRICT_PORT_FORWARD",
+        "default": "yes"
+      },
+      {
+        "name": "ENABLE_PRIVOXY",
+        "label": "ENABLE_PRIVOXY",
+        "default": "yes"
+      },
+      {
+        "name": "LAN_NETWORK",
+        "label": "LAN_NETWORK",
+        "default": "10.162.1.0/24"
+      },
+      {
+        "name": "NAME_SERVERS",
+        "label": "NAME_SERVERS",
+        "default": "84.200.69.80,37.235.1.174,1.1.1.1,37.235.1.177,84.200.70.40,1.0.0.1"
+      },
+      {
+        "name": "VPN_INPUT_PORTS",
+        "label": "VPN_INPUT_PORTS",
+        "default": ""
+      },
+      {
+        "name": "VPN_OUTPUT_PORTS",
+        "label": "VPN_OUTPUT_PORTS",
+        "default": ""
+      },
+      {
+        "name": "DEBUG",
+        "label": "DEBUG",
+        "default": "false"
+      },
+      {
+        "name": "WEBUI_PORT",
+        "label": "WEBUI_PORT",
+        "default": "8080"
+      },
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID"
+      }
+    ]
   }
 ]
