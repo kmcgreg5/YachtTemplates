@@ -41,7 +41,7 @@
     "type": 1,
     "title": "qBittorrentVPN",
     "name": "qbittorrentvpn",
-    "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent.",
+    "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent. This Docker includes OpenVPN and WireGuard to ensure a secure and private connection to the Internet, including use of iptables to prevent IP leakage when the tunnel is down. It also includes Privoxy to allow unfiltered access to index sites, to use Privoxy please point your application at \"http://host ip:8118\".",
     "logo": "https://appslist.heimdall.site/icons/qbittorrent.svg",
     "image": "binhex/arch-qbittorrentvpn:latest",
     "categories": ["Service", "Tools"],
